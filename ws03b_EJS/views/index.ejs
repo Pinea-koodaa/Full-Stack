@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS workshop</title>
+</head>
+<body>
+    <!-- tehtävä 3 -->
+    <%- include('_header') %>
+
+    <h1><%= message %></h1>
+
+    <% if (juomat && juomat.length > 0) { %>
+        <ul>
+            <% juomat.forEach(juoma => { %>
+                <li><%= juoma %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <!-- tehtävä 4 -->
+    <% if (tulostetaanko) { %>
+        <p><%= viesti %></p>
+    <% } else { %>
+        <p>täs tuli false, viesti ei näy</p>
+    <% } %>
+     
+    <!-- tehtävä 5 -->
+    <% if (users) { %>
+        <ul>
+            <% users.forEach(user => { %>
+                <li><%= user.name %> - Age: <%= user.age %></li>
+            <% }) %>
+        </ul>
+    
+    <% } %>
+
+    <!-- tehtävä 3 -->
+    <%- include('_footer') %>
+</body>
+</html>
